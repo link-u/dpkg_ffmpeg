@@ -57,5 +57,5 @@ override_dh_auto_configure:
 	  --enable-libx265
 
 override_dh_auto_install:
-	$(MAKE) install DESTDIR=debian/tmp prefix=/usr
+	env --chdir=$(BUILD_DIR) $(MAKE) install DESTDIR=../../debian/tmp prefix=/usr
 	find .
