@@ -10,3 +10,6 @@
 [submodule "fribidi"]
 	path = fribidi
 	url = git@github.com:fribidi/fribidi.git
+[submodule "libfdk-aac"]
+	path = libfdk-aac
+	url = git@github.com:mstorsjo/fdk-aac.git
