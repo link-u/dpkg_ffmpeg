@@ -7,3 +7,6 @@
 [submodule "libass"]
 	path = libass
 	url = git@github.com:libass/libass.git
+[submodule "fribidi"]
+	path = fribidi
+	url = git@github.com:fribidi/fribidi.git
