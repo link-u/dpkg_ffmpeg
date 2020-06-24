@@ -58,3 +58,6 @@ override_dh_auto_configure:
 
 override_dh_auto_install:
 	env --chdir=$(BUILD_DIR) $(MAKE) install DESTDIR=../../debian/tmp
+
+override_dh_auto_test:
+	echo "Skip tests"
