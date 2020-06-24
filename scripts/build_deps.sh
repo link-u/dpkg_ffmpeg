@@ -9,7 +9,7 @@ pushd libaom
 rm -Rfv build
 mkdir _build
 cd _build
-cmake -S ../ -B /. \
+cmake -S ../ -B ./ \
     -DBUILD_SHARED_LIBS=OFF \
 	-DENABLE_CCACHE=0 \
 	-DENABLE_DOCS=0 \
