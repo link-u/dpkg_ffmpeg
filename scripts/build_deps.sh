@@ -9,11 +9,6 @@ cd ${root_dir}
 
 pushd libass
 
-## setup build dir
-rm -Rfv _build
-mkdir _build
-cd _build
-
 ## build
 autoreconf -fiv
 ./configure --prefix="/usr" --disable-shared
