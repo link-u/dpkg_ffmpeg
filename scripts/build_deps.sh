@@ -9,10 +9,6 @@ pip3 install meson ninja
 
 apt-get install -y autoconf automake libtool pkg-config
 
-## FIXME
-mkdir -p ${HOME}/share/aclocal
-export ACLOCAL_PATH="${HOME}/share/aclocal:/usr/share/aclocal/:/usr/local/share/aclocal"
-
 ##
 
 root_dir=$(readlink -f $(cd $(dirname $(readlink -f $0)) && cd .. && pwd))
