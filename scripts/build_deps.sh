@@ -9,7 +9,7 @@ cd ${root_dir}
 
 pushd fribidi
 
-apt-get -y install meson ninja
+apt-get -y install meson ninja-build
 
 ## setup build dir
 rm -Rfv _build
