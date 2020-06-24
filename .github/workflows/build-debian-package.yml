@@ -34,7 +34,7 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: ${{ matrix.codename }}
-          path: ffmpeg/*.deb
+          path: '**/*.d?deb'
   test:
     needs: build
     runs-on: ubuntu-latest
