@@ -18,6 +18,7 @@ cd ${root_dir}
 
 pushd freetype2
 
+./autogen.sh
 ./configure --prefix="/usr" --disable-shared --enable-static --disable-freetype-config
 make -j
 make install
