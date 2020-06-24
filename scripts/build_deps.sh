@@ -33,6 +33,8 @@ pushd x264
 make -j
 make install
 
+pkg-config x264 --static --cflags --libs
+
 popd
 
 ### x265 ######################################################################
@@ -56,6 +58,8 @@ cmake ../source\
 make -j
 make install
 
+pkg-config x265 --static --cflags --libs
+
 popd
 
 ### libogg ####################################################################
@@ -66,6 +70,8 @@ pushd libogg
 ./configure --prefix="/usr" --disable-shared --enable-static
 make -j
 make install
+
+pkg-config ogg --static --cflags --libs
 
 popd
 
@@ -78,6 +84,10 @@ pushd libvorbis
 make -j
 make install
 
+pkg-config vorbis --static --cflags --libs
+pkg-config vorbisenc --static --cflags --libs
+pkg-config vorbisfile --static --cflags --libs
+
 popd
 
 ### freetype2 #################################################################
@@ -88,6 +98,8 @@ pushd freetype2
 ./configure --prefix="/usr" --disable-shared --enable-static --disable-freetype-config
 make -j
 make install
+
+pkg-config freetype2 --static --cflags --libs
 
 popd
 
@@ -104,6 +116,8 @@ meson --prefix=/usr .. -Ddocs=false -Ddefault_library=static
 ninja
 ninja install
 
+pkg-config fribidi --static --cflags --libs
+
 popd
 
 ### libass ####################################################################
@@ -116,6 +130,8 @@ pushd libass
 make -j
 make install
 
+pkg-config fribidi --static --cflags --libs
+
 popd
 
 ### libfdk-aac ################################################################
@@ -127,6 +143,8 @@ pushd libfdk-aac
 make -j
 make install
 
+pkg-config fdk-aac --static --cflags --libs
+
 popd
 
 ### libaom ####################################################################
@@ -137,6 +155,8 @@ pushd libaom
 rm -Rfv _build
 mkdir _build
 cd _build
+
+pkg-config fdk-aac --static --cflags --libs
 
 ## configure
 cmake ..\

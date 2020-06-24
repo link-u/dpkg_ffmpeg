@@ -27,13 +27,14 @@ override_dh_auto_configure:
 	env --chdir=$(BUILD_DIR) ../../configure \
       --disable-shared \
       --enable-static \
-      --pkg-config-flags=--static \
-      --extra-libs="-static -lpthread -lm" \
-      --extra-cflags=--static \
+      --pkg-config-flags="--static" \
+      --extra-libs="-lpthread -lm" \
+      --extra-cflags="--static" \
 	  --disable-stripping \
-	  --extra-version="$(DEB_REVISION)" \
 	  --prefix="/usr" \
-	  --bindir="/usr/bin" \
+	  \
+	  --disable-doc\
+	  --disable-doc\
 	  \
 	  --enable-gpl \
 	  --enable-nonfree \
