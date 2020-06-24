@@ -23,18 +23,19 @@ jobs:
         with:
           submodules: 'recursive'
           fetch-depth: 0
-
       - name: Build debian package
         uses: link-u/execute-on-separated-ubuntu@master
         with:
           script: scripts/all.sh
           on: ${{ matrix.codename }}
-
       - name: Upload result
         uses: actions/upload-artifact@v2
         with:
           name: ${{ matrix.codename }}
           path: '*.d?deb'
+      - name: Inspect disk usage
+        shell: bash
+        run: du -sh .
 
   test:
     needs: build
@@ -54,9 +55,6 @@ jobs:
         with:	
           script: scripts/test.sh	
           on: ${{ matrix.codename }}	
-      - name: Inspect disk usage
-        shell: bash
-        run: du -sh .
 
   release:
     if: startsWith(github.ref, 'refs/tags/v')
