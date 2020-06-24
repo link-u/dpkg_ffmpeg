@@ -5,6 +5,8 @@ set -eux
 root_dir=$(readlink -f $(cd $(dirname $(readlink -f $0)) && cd .. && pwd))
 cd ${root_dir}
 
+### libaom ####################################################################
+
 pushd libaom
 
 ## setup build dir
