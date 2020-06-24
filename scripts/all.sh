@@ -8,13 +8,13 @@ root_dir=$(cd ${scripts_dir} && cd .. && pwd)
 
 cd ${root_dir}
 
+## 依存ライブラリのstatic libraryをビルド
+bash "${scripts_dir}/build_deps.sh"
+
 ## debian ディレクトリをコピー
 cp -r debian ffmpeg
 ### changelogファイルの修正
 bash "${scripts_dir}/create_changelog.sh"
-
-## deb ファイルのビルド
-bash "${scripts_dir}/build_deps.sh"
 
 ## ビルド時に必要なパッケージのインストール
 mk-build-deps --install --remove \
