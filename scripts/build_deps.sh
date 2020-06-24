@@ -7,7 +7,7 @@ set -eux
 apt-get -y install python3-pip
 pip3 install meson ninja
 
-apt-get install -y autoconf automake libtool
+apt-get install -y autoconf automake libtool pkg-config
 
 ## FIXME
 mkdir -p ${HOME}/share/aclocal
