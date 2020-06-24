@@ -120,7 +120,7 @@ cd _build
 meson --prefix=/usr .. -Ddocs=false -Ddefault_library=static
 ninja
 ninja install
-make clean
+ninja clean
 
 pkg-config fribidi --static --cflags --libs
 
