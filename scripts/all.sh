@@ -6,17 +6,17 @@ set -eu
 scripts_dir=$(readlink -f $(cd $(dirname $(readlink -f $0)) && pwd))
 root_dir=$(readlink -f $(cd $(dirname $(readlink -f $0)) && cd .. && pwd))
 
+cd ${root_dir}
+
 ## debian ディレクトリをコピー
-env --chdir="${root_dir}" \
-  cp -r debian ffmpeg
+cp -r debian ffmpeg
 ### changelogファイルの修正
 bash "${scripts_dir}/create_changelog.sh"
 
 ## ビルド時に必要なパッケージのインストール
-env --chdir="${root_dir}/ffmpeg" \
-  mk-build-deps --install --remove \
+mk-build-deps --install --remove \
   --tool='apt-get -o Debug::pkgProblemResolver=yes --no-install-recommends --yes' \
-  debian/control
+  "${root_dir}/debian/control"
 
 ## deb ファイルのビルド
 bash "${scripts_dir}/build_deps.sh"
