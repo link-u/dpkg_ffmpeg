@@ -25,3 +25,6 @@
 [submodule "x265"]
 	path = x265
 	url = git@github.com:videolan/x265.git
+[submodule "x264"]
+	path = x264
+	url = https://code.videolan.org/videolan/x264.git

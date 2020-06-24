@@ -24,7 +24,6 @@ Build-Depends: debhelper (>= 10),
   libmp3lame-dev,
   libvpx-dev,
   libopus-dev,
-  libx264-dev,
   yasm [any-amd64 any-i386]
 Standards-Version: 4.1.2
 Homepage: https://ffmpeg.org/

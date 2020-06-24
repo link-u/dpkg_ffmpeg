@@ -25,6 +25,16 @@ apt-get -y install cmake
 root_dir=$(readlink -f $(cd $(dirname $(readlink -f $0)) && cd .. && pwd))
 cd ${root_dir}
 
+### x264 ######################################################################
+
+pushd x264
+
+./configure --prefix="/usr" --disable-shared --enable-static
+make -j
+make install
+
+popd
+
 ### x265 ######################################################################
 
 pushd x265
