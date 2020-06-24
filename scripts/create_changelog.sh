@@ -7,9 +7,6 @@ ffmpeg_dir=$(readlink -f $(cd $(dirname $(readlink -f $0)) && cd .. && cd ffmpeg
 
 cd ${ffmpeg_dir}
 
-## 最新のコミットをタグ含め取得
-git fetch origin --all
-
 ## HEAD のコミットID と HEAD の時のタグを取得
 git_describe="$(git describe --tags)"
 
