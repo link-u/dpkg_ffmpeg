@@ -10,4 +10,5 @@ echo "building ffmpeg"
 cd ${root_dir}/ffmpeg
 fakeroot debian/rules clean
 fakeroot debian/rules configure
+fakeroot debian/rules build
 fakeroot debian/rules binary
