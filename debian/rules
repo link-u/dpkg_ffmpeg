@@ -4,7 +4,7 @@
 #export DH_VERBOSE = 1
 DEB_REVISION := $(word 2, $(subst -, ,$(DEB_VERSION)))
 BUILD_DIR="debian/_build"
-SOURCE_DIR="../"
+SOURCE_DIR="./"
 
 # see FEATURE AREAS in dpkg-buildflags(1)
 #export DEB_BUILD_MAINT_OPTIONS = hardening=+all
