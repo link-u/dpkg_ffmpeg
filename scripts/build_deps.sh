@@ -7,10 +7,9 @@ set -eux
 apt-get -y install python3-pip
 pip3 install meson ninja
 
+apt-get install -y build-essential yasm
 apt-get install -y autoconf automake libtool pkg-config
 apt-get install -y libfontconfig1-dev fontconfig
-
-apt-get install -y yasm
 
 ## install latest cmake
 
@@ -25,6 +24,28 @@ apt-get -y install cmake
 
 root_dir=$(readlink -f $(cd $(dirname $(readlink -f $0)) && cd .. && pwd))
 cd ${root_dir}
+
+### x265 ######################################################################
+
+pushd x265/build
+
+## setup build dir
+rm -Rfv _build
+mkdir _build
+cd _build
+
+## configure
+cmake ..\
+    -DBUILD_SHARED_LIBS=OFF \
+	-DENABLE_CCACHE=0 \
+	-DENABLE_DOCS=0 \
+	-DCMAKE_INSTALL_PREFIX=/usr \
+	-DENABLE_TESTS=0
+
+make -j
+make install
+
+popd
 
 ### libogg ####################################################################
 

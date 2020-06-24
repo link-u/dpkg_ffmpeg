@@ -22,3 +22,6 @@
 [submodule "libogg"]
 	path = libogg
 	url = git@github.com:xiph/ogg.git
+[submodule "x265"]
+	path = x265
+	url = git@github.com:videolan/x265.git
