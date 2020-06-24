@@ -37,6 +37,7 @@ cd _build
 ## configure
 cmake ../source\
     -DBUILD_SHARED_LIBS=OFF \
+    -DENABLE_SHARED=OFF \
 	-DENABLE_CCACHE=0 \
 	-DENABLE_DOCS=0 \
 	-DCMAKE_INSTALL_PREFIX=/usr \
