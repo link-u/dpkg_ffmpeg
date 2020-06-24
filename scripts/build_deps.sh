@@ -5,17 +5,6 @@ set -eux
 root_dir=$(readlink -f $(cd $(dirname $(readlink -f $0)) && cd .. && pwd))
 cd ${root_dir}
 
-### libfdk-aac ################################################################
-
-pushd libfdk-aac
-
-./autogen.sh
-./configure --prefix="/usr" --disable-shared --enable-static
-make -j
-make install
-
-popd
-
 ### fribidi ###################################################################
 
 pushd fribidi
@@ -39,6 +28,17 @@ popd
 pushd libass
 
 ## build
+./autogen.sh
+./configure --prefix="/usr" --disable-shared --enable-static
+make -j
+make install
+
+popd
+
+### libfdk-aac ################################################################
+
+pushd libfdk-aac
+
 ./autogen.sh
 ./configure --prefix="/usr" --disable-shared --enable-static
 make -j
