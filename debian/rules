@@ -33,6 +33,7 @@ override_dh_auto_configure:
 	  --disable-stripping \
 	  --prefix="/usr" \
 	  --disable-ffplay \
+	  --disable-large-tests \
 	  \
 	  --disable-doc \
 	  --disable-htmlpages \
