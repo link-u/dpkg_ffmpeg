@@ -2,7 +2,6 @@
 
 set -eux
 
-
 root_dir=$(readlink -f $(cd $(dirname $(readlink -f $0)) && cd .. && pwd))
 
 pkg-config --list-all
