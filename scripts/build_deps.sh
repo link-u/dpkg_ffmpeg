@@ -8,6 +8,7 @@ apt-get -y install python3-pip
 pip3 install meson ninja
 
 apt-get install -y autoconf automake libtool pkg-config
+apt-get install -y libfontconfig1-dev fontconfig
 
 ##
 
@@ -46,7 +47,7 @@ pushd libass
 
 ## build
 ./autogen.sh
-./configure --prefix="/usr" --disable-shared --enable-static --disable-require-system-font-provider
+./configure --prefix="/usr" --disable-shared --enable-static
 make -j
 make install
 
