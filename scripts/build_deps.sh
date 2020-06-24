@@ -5,8 +5,7 @@ set -eux
 SCRIPT_PATH=$(readlink -f $(cd $(dirname $(readlink -f $0)) && pwd))
 cd ${SCRIPT_PATH}/..
 
-pushd $(pwd)
-cd libaom
+pushd libaom
 rm -Rfv build
 mkdir build
 cd build
