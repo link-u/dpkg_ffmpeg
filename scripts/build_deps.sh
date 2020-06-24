@@ -6,7 +6,7 @@ SCRIPT_PATH=$(readlink -f $(cd $(dirname $(readlink -f $0)) && pwd))
 cd ${SCRIPT_PATH}/..
 
 pushd libaom
-rm -Rfv build
+rm -Rfv _build
 mkdir _build
 cd _build
 cmake -S ../ -B ./ \
