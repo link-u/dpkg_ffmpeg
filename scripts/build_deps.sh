@@ -156,8 +156,6 @@ rm -Rfv _build
 mkdir _build
 cd _build
 
-pkg-config fdk-aac --static --cflags --libs
-
 ## configure
 cmake ..\
     -DBUILD_SHARED_LIBS=OFF \
@@ -170,4 +168,7 @@ cmake ..\
 ## build and install
 make -j
 make install
+
+pkg-config aom --static --cflags --libs
+
 popd
