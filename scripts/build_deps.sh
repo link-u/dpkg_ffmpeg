@@ -17,7 +17,7 @@ rm -Rfv _build
 mkdir _build
 cd _build
 
-meson --prefix=/usr ..
+meson --prefix=/usr .. -Ddocs=false -Ddefault_library=static
 ninja
 ninja install
 
