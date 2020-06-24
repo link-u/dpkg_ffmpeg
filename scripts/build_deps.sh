@@ -19,7 +19,7 @@ cmake ..\
 	-DENABLE_DOCS=0 \
 	-DCONFIG_AV1_ENCODER=1 \
 	-DCMAKE_INSTALL_PREFIX=/usr \
-	-DENABLE_TESTS=0 \
+	-DENABLE_TESTS=0
 
 ## build and install
 make -j
