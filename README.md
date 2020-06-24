@@ -1,8 +1,11 @@
 # ffmpeg
 
-## prework
+Automated build are available at
+
+## How to build manually
 
 ```bash
-cd ffmpeg
-dh_make --copyright gpl3 --packagename ffmpeg_4.2.1-git20191122 --createorig --single
+git clone --recurse-submodules --recursive git@github.com:link-u/dpkg_ffmpeg.git
+cd dpkg_ffmpeg
+bash scripts/all.sh
 ```

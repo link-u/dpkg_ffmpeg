@@ -1,9 +1,10 @@
-name: Build debian package on push or release-tags or pull request.
+name: Build debian package on push, release-tags or pull request.
 
 on:
   push:
     branches:
-      - '**'
+      - master
+      - feature/*
     tags:
       - v*
 
