@@ -32,9 +32,13 @@ override_dh_auto_configure:
       --extra-cflags="--static" \
 	  --disable-stripping \
 	  --prefix="/usr" \
+	  --disable-ffplay \
 	  \
-	  --disable-doc\
-	  --disable-ffplay\
+	  --disable-doc \
+	  --disable-htmlpages \
+	  --disable-manpages \
+	  --disable-podpages \
+	  --disable-txtpages \
 	  \
 	  --enable-gpl \
 	  --enable-nonfree \
