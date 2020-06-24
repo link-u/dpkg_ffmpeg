@@ -9,6 +9,10 @@ pip3 install meson ninja
 
 apt-get install -y autoconf automake libtool
 
+## FIXME
+mkdir -p ${HOME}/share/aclocal
+export ACLOCAL_PATH=${HOME}/share/aclocal
+
 ##
 
 root_dir=$(readlink -f $(cd $(dirname $(readlink -f $0)) && cd .. && pwd))
@@ -34,7 +38,6 @@ popd
 pushd libass
 
 ## build
-autoreconf -i
 ./autogen.sh
 ./configure --prefix="/usr" --disable-shared --enable-static
 make -j
@@ -46,7 +49,6 @@ popd
 
 pushd libfdk-aac
 
-autoreconf -i
 ./autogen.sh
 ./configure --prefix="/usr" --disable-shared --enable-static
 make -j
