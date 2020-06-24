@@ -34,6 +34,7 @@ popd
 pushd libass
 
 ## build
+autoreconf -i
 ./autogen.sh
 ./configure --prefix="/usr" --disable-shared --enable-static
 make -j
@@ -45,6 +46,7 @@ popd
 
 pushd libfdk-aac
 
+autoreconf -i
 ./autogen.sh
 ./configure --prefix="/usr" --disable-shared --enable-static
 make -j
