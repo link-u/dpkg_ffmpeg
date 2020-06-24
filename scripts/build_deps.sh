@@ -13,14 +13,13 @@ mkdir .build
 cd .build
 
 ## configure
-cmake \
+cmake ..\
     -DBUILD_SHARED_LIBS=OFF \
 	-DENABLE_CCACHE=0 \
 	-DENABLE_DOCS=0 \
 	-DCONFIG_AV1_ENCODER=1 \
 	-DCMAKE_INSTALL_PREFIX=/usr \
 	-DENABLE_TESTS=0 \
-    -S ${root_dir}/libaom -B ${root_dir}/libaom/.build
 
 ## build and install
 make -j
