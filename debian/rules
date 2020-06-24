@@ -43,6 +43,7 @@ override_dh_auto_configure:
 	  --disable-txtpages \
 	  \
 	  --enable-gpl \
+	  --enable-version3 \
 	  --enable-nonfree \
 	  --enable-libaom \
 	  --enable-libass \
