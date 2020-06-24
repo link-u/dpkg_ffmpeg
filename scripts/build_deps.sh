@@ -2,15 +2,21 @@
 
 set -eux
 
+## Install deps
+
+apt-get -y install python3-pip
+pip3 install meson ninja
+
+apt-get install -y autoconf automake libtool
+
+##
+
 root_dir=$(readlink -f $(cd $(dirname $(readlink -f $0)) && cd .. && pwd))
 cd ${root_dir}
 
 ### fribidi ###################################################################
 
 pushd fribidi
-
-apt-get -y install python3-pip
-pip3 install meson ninja
 
 ## setup build dir
 rm -Rfv _build
