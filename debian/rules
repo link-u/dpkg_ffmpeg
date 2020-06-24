@@ -28,14 +28,13 @@ override_dh_auto_configure:
       --disable-shared \
       --enable-static \
       --pkg-config-flags=--static \
-      --extra-libs=-static \
+      --extra-libs="-static -lpthread -lm" \
       --extra-cflags=--static \
-	  \
+	  --disable-stripping \
 	  --extra-version="$(DEB_REVISION)" \
 	  --prefix="/usr" \
-	  --disable-stripping \
-	  --extra-libs="-lpthread -lm" \
 	  --bindir="/usr/bin" \
+	  \
 	  --enable-gpl \
 	  --enable-nonfree \
 	  --enable-libaom \

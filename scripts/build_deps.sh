@@ -5,14 +5,31 @@ set -eux
 root_dir=$(readlink -f $(cd $(dirname $(readlink -f $0)) && cd .. && pwd))
 cd ${root_dir}
 
+### libass ####################################################################
+
+pushd libass
+
+## setup build dir
+rm -Rfv _build
+mkdir _build
+cd _build
+
+## build
+autoreconf -fiv
+./configure --prefix="/usr" --disable-shared
+make -j
+make install
+
+popd
+
 ### libaom ####################################################################
 
 pushd libaom
 
 ## setup build dir
-rm -Rfv .build
-mkdir .build
-cd .build
+rm -Rfv _build
+mkdir _build
+cd _build
 
 ## configure
 cmake ..\

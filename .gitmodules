@@ -4,3 +4,6 @@
 [submodule "libaom"]
 	path = libaom
 	url = https://aomedia.googlesource.com/aom
+[submodule "libass"]
+	path = libass
+	url = git@github.com:libass/libass.git
