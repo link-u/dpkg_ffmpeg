@@ -10,6 +10,8 @@ pip3 install meson ninja
 apt-get install -y autoconf automake libtool pkg-config
 apt-get install -y libfontconfig1-dev fontconfig
 
+apt-get install -y yasm
+
 ## install latest cmake
 
 apt-get -y install apt-transport-https ca-certificates gnupg software-properties-common wget
