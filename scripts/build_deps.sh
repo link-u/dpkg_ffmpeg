@@ -9,6 +9,7 @@ cd ${root_dir}
 
 pushd fribidi
 
+apt-get -y install python3-pip
 pip3 install meson ninja
 
 ## setup build dir
