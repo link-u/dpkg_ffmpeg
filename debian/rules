@@ -32,7 +32,7 @@ override_dh_auto_configure:
       --extra-libs="-lpthread -lm" \
       --extra-cflags="--static" \
 	  --disable-stripping \
-	  --prefix="/usr" \
+	  --prefix="$(BUILD_DIR)/debian/tmp/usr" \
 	  --disable-ffplay \
 	  --disable-large-tests \
 	  \
