@@ -19,3 +19,6 @@
 [submodule "libvorbis"]
 	path = libvorbis
 	url = git@github.com:xiph/vorbis.git
+[submodule "libogg"]
+	path = libogg
+	url = git@github.com:xiph/ogg.git

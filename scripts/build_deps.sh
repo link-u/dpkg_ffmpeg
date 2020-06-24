@@ -26,6 +26,17 @@ apt-get -y install cmake
 root_dir=$(readlink -f $(cd $(dirname $(readlink -f $0)) && cd .. && pwd))
 cd ${root_dir}
 
+### libogg ####################################################################
+
+pushd libogg
+
+./autogen.sh
+./configure --prefix="/usr" --disable-shared --enable-static
+make -j
+make install
+
+popd
+
 ### libvorbis #################################################################
 
 pushd libvorbis
