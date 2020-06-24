@@ -39,8 +39,8 @@ popd
 pushd libass
 
 ## build
-autoreconf -fiv
-./configure --prefix="/usr" --disable-shared
+./autogen.sh
+./configure --prefix="/usr" --disable-shared --enable-static
 make -j
 make install
 
