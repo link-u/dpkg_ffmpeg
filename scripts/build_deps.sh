@@ -9,11 +9,16 @@ cd ${root_dir}
 
 pushd fribidi
 
-## build
-./autogen.sh
-./configure --prefix="/usr" --disable-shared
-make -j
-make install
+apt-get -y install meson ninja
+
+## setup build dir
+rm -Rfv _build
+mkdir _build
+cd _build
+
+meson --prefix=/usr ..
+ninja
+ninja install
 
 popd
 
