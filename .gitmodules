@@ -16,3 +16,6 @@
 [submodule "freetype2"]
 	path = freetype2
 	url = https://git.sv.nongnu.org/r/freetype/freetype2.git
+[submodule "libvorbis"]
+	path = libvorbis
+	url = git@github.com:xiph/vorbis.git

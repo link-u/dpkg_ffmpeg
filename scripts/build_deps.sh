@@ -26,6 +26,17 @@ apt-get -y install cmake
 root_dir=$(readlink -f $(cd $(dirname $(readlink -f $0)) && cd .. && pwd))
 cd ${root_dir}
 
+### libvorbis #################################################################
+
+pushd libvorbis
+
+./autogen.sh
+./configure --prefix="/usr" --disable-shared --enable-static
+make -j
+make install
+
+popd
+
 ### freetype2 #################################################################
 
 pushd freetype2
