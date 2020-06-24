@@ -7,8 +7,8 @@ cd ${SCRIPT_PATH}/..
 
 pushd libaom
 rm -Rfv build
-mkdir build
-cd build
+mkdir _build
+cd _build
 cmake -S ../ -B /. \
     -DBUILD_SHARED_LIBS=OFF \
 	-DENABLE_CCACHE=0 \
