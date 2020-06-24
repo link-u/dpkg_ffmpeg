@@ -27,7 +27,7 @@ cd ${root_dir}
 
 ### x265 ######################################################################
 
-pushd x265/build
+pushd x265
 
 ## setup build dir
 rm -Rfv _build
@@ -35,7 +35,7 @@ mkdir _build
 cd _build
 
 ## configure
-cmake ..\
+cmake ../source\
     -DBUILD_SHARED_LIBS=OFF \
 	-DENABLE_CCACHE=0 \
 	-DENABLE_DOCS=0 \
