@@ -1,0 +1,51 @@
+#!/usr/bin/make -f
+# See debhelper(7) (uncomment to enable)
+# output every command that modifies files on the build system.
+#export DH_VERBOSE = 1
+DEB_REVISION := $(word 2, $(subst -, ,$(DEB_VERSION)))
+BUILD_DIR="debian/_build"
+
+# see FEATURE AREAS in dpkg-buildflags(1)
+#export DEB_BUILD_MAINT_OPTIONS = hardening=+all
+
+# see ENVIRONMENT in dpkg-buildflags(1)
+# package maintainers to append CFLAGS
+#export DEB_CFLAGS_MAINT_APPEND  = -Wall -pedantic
+# package maintainers to append LDFLAGS
+#export DEB_LDFLAGS_MAINT_APPEND = -Wl,--as-needed
+
+
+%:
+	dh $@ --builddirectory=$(BUILD_DIR)
+
+override_dh_auto_clean:
+	dh_auto_clean || true
+	rm -Rf $(BUILD_DIR)
+
+override_dh_auto_configure:
+	mkdir -p $(BUILD_DIR)
+	env --chdir=$(BUILD_DIR) ../../configure \
+      --disable-shared \
+      --enable-static \
+      --pkg-config-flags=--static \
+      --extra-libs=-static \
+      --extra-cflags=--static \
+	  \
+	  --extra-version="$(DEB_REVISION)" \
+	  --prefix="/usr" \
+	  --disable-stripping \
+	  --extra-libs="-lpthread -lm" \
+	  --bindir="/usr/bin" \
+	  --enable-gpl \
+	  --enable-nonfree \
+	  --enable-libaom \
+	  --enable-libass \
+	  --enable-libfdk-aac \
+	  --enable-libfreetype \
+	  --enable-libmp3lame \
+	  --enable-libopus \
+	  --enable-libvorbis \
+	  --enable-libvpx \
+	  --enable-libx264 \
+	  --enable-libx265 \
+  	  --enable-sdl2

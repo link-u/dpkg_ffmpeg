@@ -1,0 +1,6 @@
+ffmpeg (%VERSION%) unstable; urgency=medium
+
+  * See https://github.com/link-u/dpkg_ffmpeg/releases
+
+ -- Ryo Hirafuji <ryo.hirafuji@link-u.co.jp>  %DATE%
+ 
