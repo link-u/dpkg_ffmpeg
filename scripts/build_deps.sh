@@ -11,7 +11,7 @@ apt-get install -y autoconf automake libtool
 
 ## FIXME
 mkdir -p ${HOME}/share/aclocal
-export ACLOCAL_PATH=${HOME}/share/aclocal
+export ACLOCAL_PATH="${HOME}/share/aclocal:/usr/share/aclocal/:/usr/local/share/aclocal"
 
 ##
 
