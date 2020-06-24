@@ -46,7 +46,7 @@ pushd libass
 
 ## build
 ./autogen.sh
-./configure --prefix="/usr" --disable-shared --enable-static
+./configure --prefix="/usr" --disable-shared --enable-static --disable-require-system-font-provider
 make -j
 make install
 
