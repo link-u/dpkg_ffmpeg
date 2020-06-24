@@ -40,7 +40,7 @@ pushd libass
 
 ## build
 autoreconf -fiv
-./configure --prefix="/usr" --disable-shared --enable-static
+./configure --prefix="/usr" --disable-shared
 make -j
 make install
 
