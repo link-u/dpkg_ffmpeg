@@ -13,13 +13,13 @@ cp -r debian ffmpeg
 ### changelogファイルの修正
 bash "${scripts_dir}/create_changelog.sh"
 
+## deb ファイルのビルド
+bash "${scripts_dir}/build_deps.sh"
+
 ## ビルド時に必要なパッケージのインストール
 mk-build-deps --install --remove \
   --tool='apt-get -o Debug::pkgProblemResolver=yes --no-install-recommends --yes' \
   "${root_dir}/debian/control"
-
-## deb ファイルのビルド
-bash "${scripts_dir}/build_deps.sh"
 
 ## deb ファイルのビルド
 bash "${scripts_dir}/build.sh"
