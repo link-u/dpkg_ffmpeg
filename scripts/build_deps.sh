@@ -32,6 +32,7 @@ pushd x264
 ./configure --prefix="/usr" --disable-shared --enable-static
 make -j
 make install
+make clean
 
 pkg-config x264 --static --cflags --libs
 
@@ -57,6 +58,7 @@ cmake ../source\
 
 make -j
 make install
+make clean
 
 pkg-config x265 --static --cflags --libs
 
@@ -70,6 +72,7 @@ pushd libogg
 ./configure --prefix="/usr" --disable-shared --enable-static
 make -j
 make install
+make clean
 
 pkg-config ogg --static --cflags --libs
 
@@ -83,6 +86,7 @@ pushd libvorbis
 ./configure --prefix="/usr" --disable-shared --enable-static
 make -j
 make install
+make clean
 
 pkg-config vorbis --static --cflags --libs
 pkg-config vorbisenc --static --cflags --libs
@@ -98,6 +102,7 @@ pushd freetype2
 ./configure --prefix="/usr" --disable-shared --enable-static --disable-freetype-config
 make -j
 make install
+make clean
 
 pkg-config freetype2 --static --cflags --libs
 
@@ -115,6 +120,7 @@ cd _build
 meson --prefix=/usr .. -Ddocs=false -Ddefault_library=static
 ninja
 ninja install
+make clean
 
 pkg-config fribidi --static --cflags --libs
 
@@ -129,6 +135,7 @@ pushd libass
 ./configure --prefix="/usr" --disable-shared --enable-static
 make -j
 make install
+make clean
 
 pkg-config fribidi --static --cflags --libs
 
@@ -142,6 +149,7 @@ pushd libfdk-aac
 ./configure --prefix="/usr" --disable-shared --enable-static
 make -j
 make install
+make clean
 
 pkg-config fdk-aac --static --cflags --libs
 
@@ -168,6 +176,7 @@ cmake ..\
 ## build and install
 make -j
 make install
+make clean
 
 pkg-config aom --static --cflags --libs
 
