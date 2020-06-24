@@ -2,8 +2,9 @@
 
 set -eux
 
-SCRIPT_PATH=$(readlink -f $(cd $(dirname $(readlink -f $0)) && pwd))
-cd ${SCRIPT_PATH}/../ffmpeg
+root_dir=$(readlink -f $(cd $(dirname $(readlink -f $0)) && cd .. && pwd))
+
+cd ${root_dir}/ffmpeg
 
 fakeroot debian/rules clean
 fakeroot debian/rules configure

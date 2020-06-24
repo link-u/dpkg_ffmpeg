@@ -2,20 +2,27 @@
 
 set -eux
 
-SCRIPT_PATH=$(readlink -f $(cd $(dirname $(readlink -f $0)) && pwd))
-cd ${SCRIPT_PATH}/..
+root_dir=$(readlink -f $(cd $(dirname $(readlink -f $0)) && cd .. && pwd))
+cd ${root_dir}
 
 pushd libaom
-rm -Rfv _build
-mkdir _build
-cd _build
-cmake -S ../ -B ./ \
+
+## setup build dir
+rm -Rfv .build
+mkdir .build
+cd .build
+
+## configure
+cmake \
     -DBUILD_SHARED_LIBS=OFF \
 	-DENABLE_CCACHE=0 \
 	-DENABLE_DOCS=0 \
 	-DCONFIG_AV1_ENCODER=1 \
 	-DCMAKE_INSTALL_PREFIX=/usr \
-	-DENABLE_TESTS=0
+	-DENABLE_TESTS=0 \
+    -S ${root_dir}/libaom -B ${root_dir}/libaom/.build
+
+## build and install
 make -j
 make install
 popd
