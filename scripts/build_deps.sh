@@ -7,7 +7,7 @@ set -eux
 apt-get -y install python3-pip
 pip3 install meson ninja
 
-apt-get install -y build-essential yasm
+apt-get install -y build-essential yasm nasm
 apt-get install -y autoconf automake libtool pkg-config
 apt-get install -y libfontconfig1-dev fontconfig
 
