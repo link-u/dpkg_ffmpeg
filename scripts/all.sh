@@ -1,6 +1,6 @@
-#! /bin/bash
+#! /bin/bash -eux
 
-set -eu
+set -eux
 
 ## git リポジトリ上の root のパスを取得
 scripts_dir=$(readlink -f $(cd $(dirname $(readlink -f $0)) && pwd))
