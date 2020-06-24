@@ -34,7 +34,7 @@ override_dh_auto_configure:
 	  --prefix="/usr" \
 	  \
 	  --disable-doc\
-	  --disable-doc\
+	  --disable-ffplay\
 	  \
 	  --enable-gpl \
 	  --enable-nonfree \
@@ -47,5 +47,4 @@ override_dh_auto_configure:
 	  --enable-libvorbis \
 	  --enable-libvpx \
 	  --enable-libx264 \
-	  --enable-libx265 \
-  	  --enable-sdl2
+	  --enable-libx265
