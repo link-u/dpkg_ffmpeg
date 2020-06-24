@@ -13,3 +13,6 @@
 [submodule "libfdk-aac"]
 	path = libfdk-aac
 	url = git@github.com:mstorsjo/fdk-aac.git
+[submodule "freetype2"]
+	path = freetype2
+	url = git://git.sv.nongnu.org/freetype/freetype2.git

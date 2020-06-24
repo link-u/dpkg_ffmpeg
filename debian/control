@@ -11,7 +11,6 @@ Build-Depends: debhelper (>= 10),
   cmake,
   git-core,
   libfontconfig1-dev, # required by fribidi
-  libfreetype6-dev,
   libsdl2-dev,
   libtool,
   libva-dev,

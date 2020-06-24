@@ -14,6 +14,16 @@ apt-get install -y autoconf automake libtool pkg-config
 root_dir=$(readlink -f $(cd $(dirname $(readlink -f $0)) && cd .. && pwd))
 cd ${root_dir}
 
+### freetype2 #################################################################
+
+pushd freetype2
+
+./configure --prefix="/usr" --disable-shared --enable-static --disable-freetype-config
+make -j
+make install
+
+popd
+
 ### fribidi ###################################################################
 
 pushd fribidi
