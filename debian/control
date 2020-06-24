@@ -10,7 +10,7 @@ Build-Depends: debhelper (>= 10),
   automake,
   cmake,
   git-core,
-  libfontconfig1-dev, # required by fribidi
+  libfontconfig1-dev,
   libsdl2-dev,
   libtool,
   libva-dev,
