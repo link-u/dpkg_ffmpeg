@@ -10,6 +10,15 @@ pip3 install meson ninja
 apt-get install -y autoconf automake libtool pkg-config
 apt-get install -y libfontconfig1-dev fontconfig
 
+## install latest cmake
+
+apt-get -y install apt-transport-https ca-certificates gnupg software-properties-common wget
+wget -O - https://apt.kitware.com/keys/kitware-archive-latest.asc 2>/dev/null | gpg --dearmor - | tee /etc/apt/trusted.gpg.d/kitware.gpg >/dev/null
+apt-add-repository "deb https://apt.kitware.com/ubuntu/ $(lsb_release -cs) main"
+apt-get update
+
+apt-get -y install cmake
+
 ##
 
 root_dir=$(readlink -f $(cd $(dirname $(readlink -f $0)) && cd .. && pwd))
