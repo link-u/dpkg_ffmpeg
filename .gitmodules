@@ -34,3 +34,6 @@
 [submodule "libvpx"]
 	path = libvpx
 	url = git@github.com:webmproject/libvpx.git
+[submodule "fontconfig"]
+	path = fontconfig
+	url = git@github.com:freedesktop/fontconfig.git

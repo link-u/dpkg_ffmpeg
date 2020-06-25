@@ -135,6 +135,20 @@ pkg-config freetype2 --static --cflags --libs
 
 popd
 
+### fontconfig ################################################################
+
+pushd fontconfig
+
+./autogen.sh
+./configure --prefix="/usr" --disable-shared --enable-static --disable-docs
+make -j
+make install
+make clean
+
+pkg-config fontconfig --static --cflags --libs
+
+popd
+
 ### fribidi ###################################################################
 
 pushd fribidi
