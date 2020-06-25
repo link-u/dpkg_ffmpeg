@@ -163,6 +163,8 @@ popd
 
 ### fontconfig ################################################################
 
+apt-get install -y gperf
+
 pushd fontconfig
 
 ./autogen.sh
