@@ -43,3 +43,6 @@
 [submodule "libpng"]
 	path = libpng
 	url = git@github.com:glennrp/libpng.git
+[submodule "libexpat"]
+	path = libexpat
+	url = git@github.com:libexpat/libexpat.git

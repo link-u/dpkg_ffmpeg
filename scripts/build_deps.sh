@@ -174,6 +174,20 @@ pkg-config freetype2 --static --cflags --libs
 
 popd
 
+### libexpat ##################################################################
+
+pushd libexpat/expat
+
+./buildconf.sh
+./configure --prefix="/usr" --disable-shared --enable-static
+make -j
+make install
+make clean
+
+pkg-config expat --static --cflags --libs
+
+popd
+
 ### fontconfig ################################################################
 
 apt-get install -y --no-install-recommends gperf
