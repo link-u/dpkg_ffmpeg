@@ -24,6 +24,33 @@ apt-get -y install cmake
 root_dir=$(readlink -f $(cd $(dirname $(readlink -f $0)) && cd .. && pwd))
 cd ${root_dir}
 
+### zlib ######################################################################
+
+pushd zlib
+
+./configure --prefix=/usr --static
+make -j
+make install
+make clean
+
+pkg-config zlib --static --cflags --libs
+
+popd
+
+### libpng ####################################################################
+
+pushd libpng
+
+./autogen.sh
+./configure --prefix=/usr --disable-shared --enable-static
+make -j
+make install
+make clean
+
+pkg-config libpng --static --cflags --libs
+
+popd
+
 ### libvpx ####################################################################
 
 pushd libvpx

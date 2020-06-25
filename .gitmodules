@@ -37,3 +37,9 @@
 [submodule "fontconfig"]
 	path = fontconfig
 	url = git@github.com:freedesktop/fontconfig.git
+[submodule "zlib"]
+	path = zlib
+	url = git@github.com:madler/zlib.git
+[submodule "libpng"]
+	path = libpng
+	url = git@github.com:glennrp/libpng.git
