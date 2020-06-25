@@ -28,3 +28,6 @@
 [submodule "x264"]
 	path = x264
 	url = https://code.videolan.org/videolan/x264.git
+[submodule "libopus"]
+	path = libopus
+	url = https://gitlab.xiph.org/xiph/opus.git

@@ -25,6 +25,20 @@ apt-get -y install cmake
 root_dir=$(readlink -f $(cd $(dirname $(readlink -f $0)) && cd .. && pwd))
 cd ${root_dir}
 
+### libopus ###################################################################
+
+pushd libopus
+
+./autogen.sh
+./configure --prefix="/usr" --disable-shared --enable-static
+make -j
+make install
+make clean
+
+pkg-config opus --static --cflags --libs
+
+popd
+
 ### x264 ######################################################################
 
 pushd x264
