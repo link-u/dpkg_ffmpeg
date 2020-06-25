@@ -9,7 +9,6 @@ pip3 install meson ninja
 
 apt-get install -y build-essential yasm nasm
 apt-get install -y autoconf automake libtool pkg-config
-apt-get install -y libfontconfig1-dev fontconfig
 
 ## install latest cmake
 
