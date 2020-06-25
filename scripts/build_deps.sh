@@ -5,6 +5,7 @@ set -eux
 ## Install deps
 
 apt-get install -y --no-install-recommends python3-pip
+pip3 install setuptools wheel
 pip3 install meson ninja
 
 apt-get install -y --no-install-recommends build-essential yasm nasm
