@@ -41,7 +41,7 @@ popd
 
 pushd libpng
 
-./autogen.sh
+#./autogen.sh # we don't need to execute ourselves.
 ./configure --prefix=/usr --disable-shared --enable-static
 make -j
 make install
