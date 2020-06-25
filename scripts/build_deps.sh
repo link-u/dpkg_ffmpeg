@@ -24,6 +24,18 @@ apt-get install -y --no-install-recommends cmake
 root_dir=$(readlink -f $(cd $(dirname $(readlink -f $0)) && cd .. && pwd))
 cd ${root_dir}
 
+### mp3lame ###################################################################
+
+tar xvf lame-3.100.tar.gz
+pushd lame-3.100
+
+./configure --prefix=/usr --enable-nasm --disable-shared --enable-static
+make -j
+make install
+make clean
+
+popd
+
 ### zlib ######################################################################
 
 pushd zlib
