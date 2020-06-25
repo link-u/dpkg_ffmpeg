@@ -13,7 +13,7 @@ which ffmpeg
 which ffprobe
 
 ffmpeg -version
-ffmpeg --help full
+ffmpeg --help full > /dev/null 2>&1
 
 ldd $(which ffmpeg)
 ldd $(which ffprobe)
