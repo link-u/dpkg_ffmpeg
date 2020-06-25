@@ -25,6 +25,19 @@ apt-get -y install cmake
 root_dir=$(readlink -f $(cd $(dirname $(readlink -f $0)) && cd .. && pwd))
 cd ${root_dir}
 
+### libvpx ####################################################################
+
+pushd libvpx
+
+./configure --prefix="/usr" --disable-shared --enable-static --disable-docs --disable-tools --disable-examples
+make -j
+make install
+make clean
+
+pkg-config vpx --static --cflags --libs
+
+popd
+
 ### libopus ###################################################################
 
 pushd libopus

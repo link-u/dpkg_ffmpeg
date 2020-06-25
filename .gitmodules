@@ -31,3 +31,6 @@
 [submodule "libopus"]
 	path = libopus
 	url = https://gitlab.xiph.org/xiph/opus.git
+[submodule "libvpx"]
+	path = libvpx
+	url = git@github.com:webmproject/libvpx.git
