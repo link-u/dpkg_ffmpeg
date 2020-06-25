@@ -28,7 +28,7 @@ cd ${root_dir}
 
 pushd zlib
 
-./configure --prefix=/usr --static
+./configure --prefix="/usr" --libdir="/usr/lib" --includedir="/usr/include" --eprefix="/usr/bin" --static
 make -j
 make install
 make clean
