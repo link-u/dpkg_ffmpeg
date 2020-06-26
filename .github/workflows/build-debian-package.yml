@@ -2,8 +2,6 @@ name: Build debian packages
 
 on:
   push:
-    branches:
-      - '**'
     branches-ignore:
       - dependabot/**
     tags:
