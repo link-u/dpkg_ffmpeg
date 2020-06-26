@@ -3,11 +3,11 @@ name: Build debian packages
 on:
   push:
     branches:
-      - master
-      - feature/*
+      - '**'
+    branches-ignore:
+      - dependabot/**
     tags:
       - v*
-
   pull_request:
     branches:
       - master
