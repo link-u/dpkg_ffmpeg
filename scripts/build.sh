@@ -2,7 +2,8 @@
 
 set -eux
 
-root_dir=$(readlink -f $(cd $(dirname $(readlink -f $0)) && cd .. && pwd))
+
+root_dir=$(cd $(dirname $(readlink -f $0)) && cd .. && pwd)
 
 echo "building ffmpeg"
 cd ${root_dir}/ffmpeg

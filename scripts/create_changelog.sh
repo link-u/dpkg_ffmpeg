@@ -3,7 +3,7 @@
 set -eu
 
 ## git リポジトリ上の root のパスを取得
-ffmpeg_dir=$(readlink -f $(cd $(dirname $(readlink -f $0)) && cd .. && cd ffmpeg && pwd))
+ffmpeg_dir=$(cd $(dirname $(readlink -f $0)) && cd .. && cd ffmpeg && pwd)
 
 cd ${ffmpeg_dir}
 
