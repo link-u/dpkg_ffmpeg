@@ -18,5 +18,5 @@ cd ${SCRIPT_PATH}
 cd ..
 
 tag=$(git -C ffmpeg describe --tags)
-git tag ${tag}
-git push origin ${tag}
+tag="v${tag:1}"
+echo "${tag}"
