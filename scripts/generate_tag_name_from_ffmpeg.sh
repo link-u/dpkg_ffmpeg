@@ -18,5 +18,7 @@ cd ${SCRIPT_PATH}
 cd ..
 
 tag=$(git -C ffmpeg describe --tags)
-tag="v${tag:1}"
+# https://riptutorial.com/sed/topic/9436/bsd-macos-sed-vs--gnu-sed-vs--the-posix-sed-specification
+# +と?はBSD版では使えない（POSIX標準ではない）
+tag=$(echo "v${tag:1}" | sed "s_^\(v[0-9\.]\{1,\}\(-dev\)\{0,1\}\)_\1-git$(date "+%Y%m%d")_")
 echo "${tag}"
