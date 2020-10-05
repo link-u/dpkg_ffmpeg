@@ -1,3 +1,4 @@
+TAG=$(shell bash scripts/generate_tag_name_from_ffmpeg.sh)
 .PHONY: help
 help:
 	@echo make tag
@@ -6,11 +7,11 @@ help:
 
 .PHONY: tag
 tag:
-	git tag -d $(shell bash scripts/generate_tag_name_from_ffmpeg.sh) || true
-	git tag $(shell bash scripts/generate_tag_name_from_ffmpeg.sh)
+	git tag -d $(TAG) || true
+	git tag $(TAG)
 
 .PHONY: release
 release:
 	$(MAKE) tag
-	git push origin :$(shell bash scripts/generate_tag_name_from_ffmpeg.sh) || true
-	git push origin $(shell bash scripts/generate_tag_name_from_ffmpeg.sh)
+	git push origin :$(TAG) || true
+	git push origin $(TAG)
