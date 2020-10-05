@@ -7,11 +7,11 @@ help:
 
 .PHONY: tag
 tag:
-	git tag -d $(TAG) || true
+	git tag -d $(TAG) 2> /dev/null || true
 	git tag $(TAG)
 
 .PHONY: release
 release:
 	$(MAKE) tag
-	git push origin :$(TAG) || true
+	git push origin :$(TAG) 2> /dev/null || true
 	git push origin $(TAG)
