@@ -46,3 +46,6 @@
 [submodule "libexpat"]
 	path = libexpat
 	url = git@github.com:libexpat/libexpat.git
+[submodule "harfbuzz"]
+	path = harfbuzz
+	url = https://github.com/harfbuzz/harfbuzz.git

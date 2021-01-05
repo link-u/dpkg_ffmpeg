@@ -204,6 +204,24 @@ pkg-config fontconfig --static --cflags --libs
 
 popd
 
+### harfbuzz ##################################################################
+
+pushd harfbuzz
+
+## setup build dir
+rm -Rfv _build
+mkdir _build
+cd _build
+
+meson --prefix=/usr .. -Ddocs=false -Ddefault_library=static
+ninja
+ninja install
+ninja clean
+
+pkg-config harfbuzz --static --cflags --libs
+
+popd
+
 ### fribidi ###################################################################
 
 pushd fribidi
