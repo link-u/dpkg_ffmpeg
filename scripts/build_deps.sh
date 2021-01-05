@@ -213,7 +213,13 @@ rm -Rfv _build
 mkdir _build
 cd _build
 
-meson --prefix=/usr .. -Ddocs=disabled -Ddefault_library=static
+meson --prefix=/usr .. \
+	-Ddefault_library=static \
+  -Ddocs=disabled \
+	-Dtests=disabled \
+	-Dintrospection=disabled \
+	-Dbenchmark=disabled
+
 ninja
 ninja install
 ninja clean
