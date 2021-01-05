@@ -1,6 +1,7 @@
 version: 2
 updates:
 - package-ecosystem: "gitsubmodule"
+  open-pull-requests-limit: 100
   directory: "/"
   schedule:
     interval: "monthly"
@@ -9,6 +10,7 @@ updates:
   reviewers:
     - "ledyba-z"
 - package-ecosystem: "github-actions"
+  open-pull-requests-limit: 100
   directory: "/"
   schedule:
     interval: "monthly"
